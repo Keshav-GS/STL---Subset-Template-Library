@@ -2,7 +2,7 @@
 
 using std::endl;
 
-template <typename ADsType> class ADs    //ADs=>'Array based Datastructure'
+template <typename ADsType> class ADs    //ADs=>'Array based Datastructure' ;This is an abstract class
 {
     protected:
         size_t count;  //number of elements currently present
@@ -20,11 +20,15 @@ template <typename ADsType> class ADs    //ADs=>'Array based Datastructure'
         {
             count = ds.count;
             Capacity = ds.Capacity;
+            items = ds.items;
+
+            /** Alternate to last line:
             items = new ADsType[ds.Capacity];
             std::copy(ds.items, ds.items + ds.Capacity, this->items);
+            **/
         }
 
-        virtual ~ ADs() //whenever a class might be extended, always a good idea to make the destructor virtual
+        virtual ~ ADs() //whenever a class might be extended, always a good idea to make the destructor/any functions that would be overriden virtual
         {
             /*unlike free, delete calls destructors of each obj in item array before deleting items from heap*/
             if(items) delete []items; 
