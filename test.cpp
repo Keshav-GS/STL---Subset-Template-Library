@@ -29,6 +29,8 @@ int main()
     cout<<"Stack s2 size, capacity = "<<s2.size()<<","<<s2.capacity()<<endl;
 
     Stack<int> s3(s2);
+    s2.pop();
+    cout<<"Top of stack s2 after popping contains: "<<s2.top()<<endl;
     cout<<"Top of stack s3 contains: "<<s3.top()<<endl;
     cout<<"Stack s3 size, capacity = "<<s3.size()<<","<<s3.capacity()<<endl;
 
