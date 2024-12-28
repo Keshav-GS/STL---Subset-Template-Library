@@ -4,7 +4,8 @@ using std::cout, std::endl, std::string;
 
 int main()
 {
-    //string does not work properly. Once realloc is called after filling in few elements, it breaks down
+    /*Note: stl string does not work properly as a type because of it's internal implementation. 
+    We can create a custom string class to test the functionality if needed.*/
 
     Vector<int> * v0;
     v0 = new Vector<int>();
@@ -117,22 +118,4 @@ int main()
     q6.clear();
     cout<<"At front of q5: "<<q5.front()<<endl;
     cout<<"At rear of q5: "<<q5.rear()<<endl;
-
-
-    //VECTOR
-    // Vector<int>* v0 = new Vector<int>(3);
-    // Vector<int> x = *v0;
-    // v0->push_back(1);
-    // v0->push_back(2);
-    // v0->push_back(3);
-    // v0->pop_back();
-    // cout<<"v0 size, capacity = "<<v0->size()<<","<<v0->capacity()<<endl;
-    // cout<<"At back of v0: "<<v0->back()<<endl;
-    // x.push_back(10);
-    // x.push_back(11);
-    // x.push_back(12);
-    // cout<<"x size, capacity = "<<x.size()<<","<<x.capacity()<<endl;
-    // cout<<"At back of x: "<<x.back()<<endl;
-    // delete v0;
-    // cout<<"After deleting v0: v0 size, capacity = "<<v0->size()<<","<<v0->capacity()<<endl;
 }
