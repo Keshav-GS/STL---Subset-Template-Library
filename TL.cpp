@@ -68,7 +68,7 @@ template <typename ADsType> class ADs    //ADs=>'Array based Datastructure' ;Thi
 
         virtual ADs& operator= (const ADs& ds) //needed because default assignment operator is shallow copy
         {
-            //Refer: https://stackoverflow.com/questions/12015156/what-is-wrong-with-checking-for-self-assignment-and-what-does-it-mean
+            /*Refer: https://stackoverflow.com/questions/12015156/what-is-wrong-with-checking-for-self-assignment-and-what-does-it-mean*/
 
             if(items) delete[] items;
             count = ds.count;
@@ -78,7 +78,7 @@ template <typename ADsType> class ADs    //ADs=>'Array based Datastructure' ;Thi
 
             return *this;
 
-            /*Observe we've used assignment operator in copy constructor. To avoid kinda duplication of same effort.*/
+            /*Also observe we've used assignment operator in copy constructor. To avoid kinda duplication of same effort.*/
         }
 
         virtual void clear()
